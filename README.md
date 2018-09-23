@@ -28,12 +28,12 @@ See here for [getting started with FSTs][2]
 
 ## Overview
 This project provides a `Dockerfile` that will generate the `.hfst` files from
-the [Giellateckno][1] project. Giellatechno is an open-source project that
-provides tools for modelling language mophologies. 
+the [Giellatekno][1] project. Giellatekno is an open-source project that
+provides tools for modelling language mofphologies. 
 
 
 ## Motivation
-The [Giellateckno][1] project has been around for quite a while and consists
+The [Giellatekno][1] project has been around for quite a while and consists
 of a *ton* of different tools including keyboards and spell checkers (not sure
 what state the projects are in) not to mention quite a few different language
 morphologies. However, the project takes some technical patience to get set
@@ -42,14 +42,26 @@ a technical barrier for getting started with the project, thus the motivation
 for this utility.
 
 The `Dockerfile` contained in this repo checks out the minimum required code
-from the Giellateckno project and installs the required dependencies, and then
+from the Giellatekno project and installs the required dependencies, and then
 builds out the FSTs for the `crk` language source. The resulting docker image
 without FSTS is roughly 180MB, and with FSTs is roughly 1.9GB.
 
 Copy files to host: https://stackoverflow.com/questions/22049212/copying-files-from-docker-container-to-host
 
+## LICENSE
+There are 3 software licenses to be aware of concerning this project:
+
+- The Giellatekno project is [licensed under the GPLv3 license][3].
+- Similarly, this work is licensed [similarly GPLv3][4]
+- **The generated FST files' licensing is currently pending**, please be aware
+that the license will likely be permissive for open-source projects, however
+the data may not be used for commercial purposes, and currently all rights are
+reserved by the respective owners. Please contact the [authors of the itwewina
+project][5] if you have any questions or concerns about the data.
+
 **TODO:**
 
+ - [ ] licensing
  - [ ] linguistics primer doc
  - [ ] automated build
  - [ ] publish FSTs
@@ -57,3 +69,6 @@ Copy files to host: https://stackoverflow.com/questions/22049212/copying-files-f
 
 [1]: http://giellatekno.uit.no/index.eng.html
 [2]: https://github.com/UAlbertaALTLab/itwewina/blob/development/docs/using-the-fsts.md
+[3]: https://victorio.uit.no/langtech/trunk/LICENSE.txt
+[4]: /LICENSE
+[5]: http://altlab.ualberta.ca/itwewina/about/
