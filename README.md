@@ -31,7 +31,6 @@ This project provides a `Dockerfile` that will generate the `.hfst` files from
 the [Giellateckno[1] project. Giellatechno is an open-source project that
 provides tools for modelling language mophologies. 
 
-**TODO:** linguistics primer doc
 
 ## Motivation
 The [Giellateckno][1] project has been around for quite a while and consists
@@ -44,8 +43,14 @@ for this utility.
 
 The `Dockerfile` contained in this repo checks out the minimum required code
 from the Giellateckno project and installs the required dependencies, and then
-builds out the FSTs for the `crk` language source.
+builds out the FSTs for the `crk` language source. The resulting docker image
+without FSTS is roughly 180MB, and with FSTs is roughly 1.9GB.
 
+**TODO:**
+
+ - [ ] linguistics primer doc
+ - [ ] automated build
+ - [ ] publish FSTs
 
 
 [1]: http://giellatekno.uit.no/index.eng.html
