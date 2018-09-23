@@ -1,5 +1,5 @@
 ## Quick start
-Install dependencies and build FSTs:
+To generate the `crk` FSTs, clone this project and then:
 
 ```
 $ docker build -t langtech .
@@ -28,7 +28,7 @@ See here for [getting started with FSTs][2]
 
 ## Overview
 This project provides a `Dockerfile` that will generate the `.hfst` files from
-the [Giellateckno[1] project. Giellatechno is an open-source project that
+the [Giellateckno][1] project. Giellatechno is an open-source project that
 provides tools for modelling language mophologies. 
 
 
@@ -45,6 +45,8 @@ The `Dockerfile` contained in this repo checks out the minimum required code
 from the Giellateckno project and installs the required dependencies, and then
 builds out the FSTs for the `crk` language source. The resulting docker image
 without FSTS is roughly 180MB, and with FSTs is roughly 1.9GB.
+
+Copy files to host: https://stackoverflow.com/questions/22049212/copying-files-from-docker-container-to-host
 
 **TODO:**
 
