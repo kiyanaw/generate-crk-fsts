@@ -52,10 +52,3 @@ RUN cd /home/langtech/langs/crk/ && \
   ./autogen.sh && \
   ./configure --disable-syntax && \
   make && make install
-
-# RUN /home/langtech/giella-core/autogen.sh \
-#   && /home/langtech/giella-core/configure \
-#   && make --directory /home/langtech/giella-core \
-#   && make install --directory /home/langtech/giella-core
-# run autogen configure make in the crk folder
-# should have fsts now
