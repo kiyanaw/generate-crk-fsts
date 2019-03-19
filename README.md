@@ -1,3 +1,7 @@
+# This repo is deprecated
+[Go here instead](https://github.com/UAlbertaALTLab/plains-cree-fsts)
+
+
 ## Quick start
 To generate the `crk` FSTs, clone this project and then:
 
