@@ -46,7 +46,32 @@ from the Giellatekno project and installs the required dependencies, and then
 builds out the FSTs for the `crk` language source. The resulting docker image
 without FSTS is roughly 180MB, and with FSTs is roughly 1.9GB.
 
-Copy files to host: https://stackoverflow.com/questions/22049212/copying-files-from-docker-container-to-host
+## Copy files to host
+
+The FSTs and all generated files are now created _within_ the Docker container. But we want them on our host machine. Here's how to get them out.
+
+*Adapting the steps in this StackOverflow post: https://stackoverflow.com/questions/22049212/copying-files-from-docker-container-to-host*
+
+1. Have a Docker container process running for `langtech`. For example, run an interactive shell:
+
+```sh
+docker run -it langtech
+```
+
+2. In a new terminal, determine the container ID of the container running the `langtech` image (this will differ for you):
+
+```sh
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
+7579c69c801d        langtech            "/bin/bash"         3 minutes ago       Up 3 minutes                            cranky_benz
+```
+
+3. use `docker cp` to copy files over from that container ID (replace `7579c69c801d` with your container ID):
+
+```sh
+docker cp 7579c69c801d:/home/langtech/langs/crk/src/analyser-gt-desc.omnivorous.hfstol .
+docker cp 7579c69c801d:/home/langtech/langs/crk/src/generator-gt-norm.hfstol .
+```
+
 
 ## LICENSE
 There are 3 software licenses to be aware of concerning this project:
